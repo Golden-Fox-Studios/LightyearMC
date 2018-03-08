@@ -1,16 +1,14 @@
 package com.superkooks.lightyear;
 
-import java.lang.reflect.Field;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.potion.Potion;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.item.ItemStack;
 
 @Mod(modid = "ly", name = "Lightyear", version = "0.1")
 public class Lightyear {
@@ -29,11 +27,11 @@ public class Lightyear {
 		
 		// Items
 		itemEmptySyringe = new ItemEmptySyringe().setUnlocalizedName("EmptySyringe")
-				.setTextureName("ly:itemEmptySyringe");
+				.setTextureName("ly:itemEmptySyringe").setCreativeTab(tabLightyear);
 		itemLeviathanSyringe = new ItemLeviathanSyringe().setUnlocalizedName("LeviathanSyringe")
-				.setTextureName("ly:itemLeviathanSyringe");
+				.setTextureName("ly:itemLeviathanSyringe").setCreativeTab(tabLightyear);
 		itemTalariaSyringe = new ItemTalariaSyringe().setUnlocalizedName("TalariaSyringe")
-				.setTextureName("ly:itemTalariaSyringe");
+				.setTextureName("ly:itemTalariaSyringe").setCreativeTab(tabLightyear);
 		
 		// Blocks
 		
@@ -55,4 +53,11 @@ public class Lightyear {
 	public void postInit (FMLPostInitializationEvent event) {
 		
 	}
+	
+	public static CreativeTabs tabLightyear = new CreativeTabs("tabLightyear") {
+		@Override
+		public Item getTabIconItem() {
+			return new ItemStack(itemLeviathanSyringe).getItem();
+		}
+	};
 }

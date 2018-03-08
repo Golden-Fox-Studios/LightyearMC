@@ -1,3 +1,5 @@
-item.ItemEmptySyringe.name=Empty Syringe
-item.ItemLeviathanSyringe.name=Leviathan Syringe
-item.ItemTalariaSyringe.name=Talaria Syringe
+item.EmptySyringe.name=Empty Syringe
+item.LeviathanSyringe.name=Leviathan Syringe
+item.TalariaSyringe.name=Talaria Syringe
+
+itemGroup.tabLightyear=Lightyear
