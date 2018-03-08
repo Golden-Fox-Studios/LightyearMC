@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ly",
+  "name": "Lightyear",
+  "description": "An Intergalatic warp mod for Minecraft! Travel through galaxies at warp speed!",
+  "version": "0.1",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["SuperKooks", "a_cat_"],
+  "credits": "The Forge and us.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
