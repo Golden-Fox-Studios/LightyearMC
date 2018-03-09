@@ -6,7 +6,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -41,7 +43,7 @@ public class Lightyear {
 				itemLeviathanSyringe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemTalariaSyringe,
 				itemTalariaSyringe.getUnlocalizedName().substring(5));
-		
+
 	}
 	
 	@EventHandler
@@ -51,7 +53,11 @@ public class Lightyear {
 	
 	@EventHandler
 	public void postInit (FMLPostInitializationEvent event) {
+		// Recipes
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(itemEmptySyringe), new Object[] {
+				Items.iron_ingot, Items.glass_bottle
+		});
 	}
 	
 	public static CreativeTabs tabLightyear = new CreativeTabs("tabLightyear") {
