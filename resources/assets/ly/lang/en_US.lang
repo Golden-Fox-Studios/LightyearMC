@@ -2,4 +2,8 @@ item.EmptySyringe.name=Empty Syringe
 item.LeviathanSyringe.name=Leviathan Syringe
 item.TalariaSyringe.name=Talaria Syringe
 
+item.Palladium.name=Palladium
+
+tile.PalladiumOre.name=Palladium Ore
+
 itemGroup.tabLightyear=Lightyear

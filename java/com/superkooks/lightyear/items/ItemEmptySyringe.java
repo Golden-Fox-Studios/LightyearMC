@@ -1,4 +1,4 @@
-package com.superkooks.lightyear;
+package com.superkooks.lightyear.items;
 
 import net.minecraft.item.Item;
 

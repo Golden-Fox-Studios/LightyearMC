@@ -1,4 +1,4 @@
-package com.superkooks.lightyear;
+package com.superkooks.lightyear.items;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemLeviathanSyringe extends Item {
+public class ItemTalariaSyringe extends Item {
 	public EnumAction getItemUseAction(ItemStack itemStack)
     {
         return EnumAction.drink;
@@ -37,9 +37,9 @@ public class ItemLeviathanSyringe extends Item {
         if (!world.isRemote)
         {
             List list = new ArrayList();
-            list.add(new PotionEffect(13, 6000, 0, false));
-            list.add(new PotionEffect(16, 6000, 0, false));
-            list.add(new PotionEffect(17, 400, 0, false));
+            list.add(new PotionEffect(5, 3600, 0, false));
+            list.add(new PotionEffect(8, 3600, 1, false));
+            list.add(new PotionEffect(19, 160, 0, false));
 
             if (list != null)
             {
