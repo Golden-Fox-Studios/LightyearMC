@@ -5,5 +5,6 @@ item.TalariaSyringe.name=Talaria Syringe
 item.Palladium.name=Palladium
 
 tile.PalladiumOre.name=Palladium Ore
+tile.PalladiumBlock.name=Block of Palladium
 
 itemGroup.tabLightyear=Lightyear

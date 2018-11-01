@@ -1,5 +1,6 @@
 package com.superkooks.lightyear;
 
+import com.superkooks.lightyear.blocks.BlockPalladium;
 import com.superkooks.lightyear.blocks.BlockPalladiumOre;
 import com.superkooks.lightyear.items.ItemEmptySyringe;
 import com.superkooks.lightyear.items.ItemLeviathanSyringe;
@@ -30,6 +31,7 @@ public class Lightyear {
 	
 	// Blocks
 	public static Block blockPalladiumOre;
+	public static Block blockPalladium;
 
 	
 	@EventHandler
@@ -37,6 +39,7 @@ public class Lightyear {
 		// Item/Block Init and registering
 		// Config Handling
 		
+		//
 		// Items
 		itemEmptySyringe = new ItemEmptySyringe().setUnlocalizedName("EmptySyringe")
 				.setTextureName("ly:itemEmptySyringe").setCreativeTab(tabLightyear);
@@ -45,15 +48,21 @@ public class Lightyear {
 		itemTalariaSyringe = new ItemTalariaSyringe().setUnlocalizedName("TalariaSyringe")
 				.setTextureName("ly:itemTalariaSyringe").setCreativeTab(tabLightyear);
 		
+		
 		itemPalladium = new ItemPalladium().setUnlocalizedName("Palladium")
 				.setTextureName("ly:itemPalladium").setCreativeTab(tabLightyear);
 		
+		//
 		// Blocks
 		blockPalladiumOre = new BlockPalladiumOre(Material.rock).setBlockName("PalladiumOre")
 				.setBlockTextureName("ly:blockPalladiumOre").setCreativeTab(tabLightyear);
+		blockPalladium = new BlockPalladium(Material.rock).setBlockName("PalladiumBlock")
+				.setBlockTextureName("ly:blockPalladium").setCreativeTab(tabLightyear);
 		
+		//
 		// Registering
 		GameRegistry.registerWorldGenerator(new PalladiumGeneration(), 0);
+		
 		
 		// Items
 		GameRegistry.registerItem(itemEmptySyringe,
@@ -66,13 +75,20 @@ public class Lightyear {
 		GameRegistry.registerItem(itemPalladium,
 				itemPalladium.getUnlocalizedName().substring(5));
 		
+	
 		// Blocks
 		GameRegistry.registerBlock(blockPalladiumOre,
 				blockPalladiumOre.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockPalladium,
+				blockPalladium.getUnlocalizedName().substring(5));
 		
+		//
 		// Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(itemEmptySyringe), new Object[] {
 				Items.iron_ingot, Items.glass_bottle
+		});
+		GameRegistry.addShapelessRecipe(new ItemStack(itemPalladium, 9), new Object[] {
+				Lightyear.blockPalladium
 		});
 
 	}
