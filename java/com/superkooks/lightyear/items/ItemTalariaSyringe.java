@@ -36,14 +36,14 @@ public class ItemTalariaSyringe extends Item {
 
         if (!world.isRemote)
         {
-            List list = new ArrayList();
+            List<PotionEffect> list = new ArrayList<PotionEffect>();
             list.add(new PotionEffect(5, 3600, 0, false));
             list.add(new PotionEffect(8, 3600, 1, false));
             list.add(new PotionEffect(19, 160, 0, false));
 
             if (list != null)
             {
-                Iterator iterator = list.iterator();
+                Iterator<PotionEffect> iterator = list.iterator();
 
                 while (iterator.hasNext())
                 {

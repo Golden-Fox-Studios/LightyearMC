@@ -7,7 +7,6 @@ import com.superkooks.lightyear.Lightyear;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 public class BlockPalladiumOre extends Block {
 

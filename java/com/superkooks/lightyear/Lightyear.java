@@ -53,8 +53,9 @@ public class Lightyear {
 				.setBlockTextureName("ly:blockPalladiumOre").setCreativeTab(tabLightyear);
 		
 		// Registering
-		// Items
+		GameRegistry.registerWorldGenerator(new PalladiumGeneration(), 0);
 		
+		// Items
 		GameRegistry.registerItem(itemEmptySyringe,
 				itemEmptySyringe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemLeviathanSyringe,
@@ -70,7 +71,6 @@ public class Lightyear {
 				blockPalladiumOre.getUnlocalizedName().substring(5));
 		
 		// Recipes
-		
 		GameRegistry.addShapelessRecipe(new ItemStack(itemEmptySyringe), new Object[] {
 				Items.iron_ingot, Items.glass_bottle
 		});

@@ -36,14 +36,14 @@ public class ItemLeviathanSyringe extends Item {
 
         if (!world.isRemote)
         {
-            List list = new ArrayList();
+            List<PotionEffect> list = new ArrayList<PotionEffect>();
             list.add(new PotionEffect(13, 6000, 0, false));
             list.add(new PotionEffect(16, 6000, 0, false));
             list.add(new PotionEffect(17, 400, 0, false));
 
             if (list != null)
             {
-                Iterator iterator = list.iterator();
+                Iterator<PotionEffect> iterator = list.iterator();
 
                 while (iterator.hasNext())
                 {
