@@ -2,9 +2,15 @@ package com.superkooks.lightyear;
 
 import com.superkooks.lightyear.blocks.BlockPalladium;
 import com.superkooks.lightyear.blocks.BlockPalladiumOre;
+import com.superkooks.lightyear.blocks.BlockStratomiteOre;
 import com.superkooks.lightyear.items.ItemEmptySyringe;
 import com.superkooks.lightyear.items.ItemLeviathanSyringe;
+import com.superkooks.lightyear.items.ItemNovite;
 import com.superkooks.lightyear.items.ItemPalladium;
+import com.superkooks.lightyear.items.ItemReinforcedLeather;
+import com.superkooks.lightyear.items.ItemSparksilverDust;
+import com.superkooks.lightyear.items.ItemSparksilverIngot;
+import com.superkooks.lightyear.items.ItemStratomiteIngot;
 import com.superkooks.lightyear.items.ItemTalariaSyringe;
 
 import cpw.mods.fml.common.Mod;
@@ -28,10 +34,16 @@ public class Lightyear {
 	public static Item itemTalariaSyringe;
 	
 	public static Item itemPalladium;
+	public static Item itemNovite;
+	public static Item itemReinforcedLeather;
+	public static Item itemSparksilverDust;
+	public static Item itemSparksilverIngot;
+	public static Item itemStratomiteIngot;
 	
 	// Blocks
 	public static Block blockPalladiumOre;
 	public static Block blockPalladium;
+	public static Block blockStratomiteOre;
 
 	
 	@EventHandler
@@ -51,6 +63,16 @@ public class Lightyear {
 		
 		itemPalladium = new ItemPalladium().setUnlocalizedName("Palladium")
 				.setTextureName("ly:itemPalladium").setCreativeTab(tabLightyear);
+		itemNovite = new ItemNovite().setUnlocalizedName("Novite")
+				.setTextureName("ly:itemNovite").setCreativeTab(tabLightyear);
+		itemReinforcedLeather = new ItemReinforcedLeather().setUnlocalizedName("ReinforcedLeather")
+				.setTextureName("ly:itemReinforcedLeather").setCreativeTab(tabLightyear);
+		itemSparksilverDust = new ItemSparksilverDust().setUnlocalizedName("SparksilverDust")
+				.setTextureName("ly:itemSparksilverDust").setCreativeTab(tabLightyear);
+		itemSparksilverIngot = new ItemSparksilverIngot().setUnlocalizedName("SparksilverIngot")
+				.setTextureName("ly:itemSparksilverIngot").setCreativeTab(tabLightyear);
+		itemStratomiteIngot = new ItemStratomiteIngot().setUnlocalizedName("StratomiteIngot")
+				.setTextureName("ly:itemStratomiteIngot").setCreativeTab(tabLightyear);
 		
 		//
 		// Blocks
@@ -58,6 +80,8 @@ public class Lightyear {
 				.setBlockTextureName("ly:blockPalladiumOre").setCreativeTab(tabLightyear);
 		blockPalladium = new BlockPalladium(Material.rock).setBlockName("PalladiumBlock")
 				.setBlockTextureName("ly:blockPalladium").setCreativeTab(tabLightyear);
+		blockStratomiteOre = new BlockStratomiteOre(Material.rock).setBlockName("StratomiteOre")
+				.setBlockTextureName("ly:blockStratomiteOre").setCreativeTab(tabLightyear);
 		
 		//
 		// Registering
@@ -74,6 +98,16 @@ public class Lightyear {
 		
 		GameRegistry.registerItem(itemPalladium,
 				itemPalladium.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemNovite,
+				itemNovite.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemReinforcedLeather,
+				itemReinforcedLeather.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemSparksilverDust,
+				itemSparksilverDust.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemSparksilverIngot,
+				itemSparksilverIngot.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemStratomiteIngot,
+				itemStratomiteIngot.getUnlocalizedName().substring(5));
 		
 	
 		// Blocks
@@ -81,6 +115,8 @@ public class Lightyear {
 				blockPalladiumOre.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockPalladium,
 				blockPalladium.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockStratomiteOre,
+				blockStratomiteOre.getUnlocalizedName().substring(5));
 		
 		//
 		// Recipes

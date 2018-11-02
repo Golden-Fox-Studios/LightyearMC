@@ -3,8 +3,14 @@ item.LeviathanSyringe.name=Leviathan Syringe
 item.TalariaSyringe.name=Talaria Syringe
 
 item.Palladium.name=Palladium
+item.Novite.name=Novite
+item.ReinforcedLeather.name=Reinforced Leather
+item.SparksilverDust.name=Sparksilver Dust
+item.SparksilverIngot.name=Sparksilver Ingot
+item.StratomiteIngot.name=Stratomite Ingot
 
 tile.PalladiumOre.name=Palladium Ore
 tile.PalladiumBlock.name=Block of Palladium
+tile.StratomiteOre.name=Stratomite Ore
 
 itemGroup.tabLightyear=Lightyear

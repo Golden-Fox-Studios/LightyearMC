@@ -12,7 +12,7 @@ public class BlockPalladiumOre extends Block {
 
 	public BlockPalladiumOre(Material material) {
 		super(material);
-		this.setHardness(1.0F);
+		this.setHardness(5.0F);
 		this.setHarvestLevel("pickaxe", 2);
 	}
 	
@@ -23,7 +23,7 @@ public class BlockPalladiumOre extends Block {
 	
 	@Override
 	public int quantityDropped(Random rand) {
-		return rand.nextInt(3) + 1; // Drop at least 1, or up to 2, nextInt is exlusive
+		return rand.nextInt(3) + 1; // Drop at least 1, or up to 3, nextInt is exlusive
 	}
 	
 }
