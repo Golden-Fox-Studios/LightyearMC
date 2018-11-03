@@ -13,7 +13,6 @@ public class BlockCentrifuge extends BlockContainer {
 
 	public BlockCentrifuge(Material material) {
 		super(material);
-		this.isBlockContainer = true;
 	}
 	
 	@Override

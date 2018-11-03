@@ -16,7 +16,7 @@ public class GuiHandler implements IGuiHandler {
 		switch (ID) {
 			case GuiIds.centrifugeId:
 				if (tile instanceof TileEntityCentrifuge) {
-					return new ContainerGuiTest(player.inventory, (TileEntityCentrifuge) tile);
+					return new ContainerGuiTest(player, (TileEntityCentrifuge) tile);
 				}
 		}
 		
@@ -30,7 +30,7 @@ public class GuiHandler implements IGuiHandler {
 		switch (ID) {
 			case GuiIds.centrifugeId:
 				if (tile instanceof TileEntityCentrifuge) {
-					return new GuiTest();
+					return new GuiTest((TileEntityCentrifuge) tile, player);
 				}
 		}
 		
