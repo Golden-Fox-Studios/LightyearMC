@@ -4,7 +4,7 @@ import com.superkooks.lightyear.blocks.BlockCentrifuge;
 import com.superkooks.lightyear.blocks.BlockPalladium;
 import com.superkooks.lightyear.blocks.BlockPalladiumOre;
 import com.superkooks.lightyear.blocks.BlockStratomiteOre;
-import com.superkooks.lightyear.client.gui.GuiTest;
+import com.superkooks.lightyear.client.gui.GuiHandler;
 import com.superkooks.lightyear.items.ItemEmptySyringe;
 import com.superkooks.lightyear.items.ItemLeviathanSyringe;
 import com.superkooks.lightyear.items.ItemNovite;
@@ -152,7 +152,7 @@ public class Lightyear {
 	public void init (FMLInitializationEvent event) {
 		// Proxy, TileEntity, Entity, GUI and Packet Registering
 		
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiTest());
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 	}
 	
 	@EventHandler
