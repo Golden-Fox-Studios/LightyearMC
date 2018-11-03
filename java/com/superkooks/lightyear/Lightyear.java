@@ -1,8 +1,10 @@
 package com.superkooks.lightyear;
 
+import com.superkooks.lightyear.blocks.BlockCentrifuge;
 import com.superkooks.lightyear.blocks.BlockPalladium;
 import com.superkooks.lightyear.blocks.BlockPalladiumOre;
 import com.superkooks.lightyear.blocks.BlockStratomiteOre;
+import com.superkooks.lightyear.client.gui.GuiTest;
 import com.superkooks.lightyear.items.ItemEmptySyringe;
 import com.superkooks.lightyear.items.ItemLeviathanSyringe;
 import com.superkooks.lightyear.items.ItemNovite;
@@ -15,9 +17,11 @@ import com.superkooks.lightyear.items.ItemTalariaSyringe;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,6 +32,9 @@ import net.minecraft.item.ItemStack;
 
 @Mod(modid = "ly", name = "Lightyear", version = "0.1")
 public class Lightyear {
+	@Instance("ly")
+	public static Lightyear instance;
+	
 	// Items
 	public static Item itemEmptySyringe;
 	public static Item itemLeviathanSyringe;
@@ -44,6 +51,9 @@ public class Lightyear {
 	public static Block blockPalladiumOre;
 	public static Block blockPalladium;
 	public static Block blockStratomiteOre;
+	
+	// Machines
+	public static Block blockCentrifuge;
 
 	
 	@EventHandler
@@ -84,6 +94,11 @@ public class Lightyear {
 				.setBlockTextureName("ly:blockStratomiteOre").setCreativeTab(tabLightyear);
 		
 		//
+		// Machines
+		blockCentrifuge = new BlockCentrifuge(Material.rock).setBlockName("Centrifuge")
+				.setBlockTextureName("ly:blockCentrifuge").setCreativeTab(tabLightyear);
+		
+		//
 		// Registering
 		GameRegistry.registerWorldGenerator(new PalladiumGeneration(), 0);
 		
@@ -118,6 +133,10 @@ public class Lightyear {
 		GameRegistry.registerBlock(blockStratomiteOre,
 				blockStratomiteOre.getUnlocalizedName().substring(5));
 		
+		// Machines
+		GameRegistry.registerBlock(blockCentrifuge,
+				blockCentrifuge.getUnlocalizedName().substring(5));
+		
 		//
 		// Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(itemEmptySyringe), new Object[] {
@@ -132,6 +151,8 @@ public class Lightyear {
 	@EventHandler
 	public void init (FMLInitializationEvent event) {
 		// Proxy, TileEntity, Entity, GUI and Packet Registering
+		
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiTest());
 	}
 	
 	@EventHandler
