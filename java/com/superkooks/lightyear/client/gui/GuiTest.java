@@ -7,8 +7,8 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiTest extends GuiScreen {
-	int guiWidth = 148;
-	int guiHeight = 80;
+	int guiWidth = 224;
+	int guiHeight = 134;
 	Minecraft mc = Minecraft.getMinecraft();
 	
 	@Override
