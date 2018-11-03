@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.Constants;
 
 public class TileEntityCentrifuge extends TileEntity implements IInventory {
 	
-	private ItemStack[] items = new ItemStack[15];
+	private ItemStack[] items = new ItemStack[2];
 	
 	public int getSizeInventory() {
 		return items.length;

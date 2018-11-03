@@ -15,12 +15,10 @@ public class ContainerGuiTest extends Container {
 	public ContainerGuiTest(EntityPlayer player, TileEntityCentrifuge tileEntity) {
 		this.tileEntity = tileEntity;
 		//Storage
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
-            for (int j = 0; j < 5; j++)
-            {
-                addSlotToContainer(new Slot(tileEntity, slotID++, 44 + j * 18, 17 + i * 18));
-            }
+            addSlotToContainer(new Slot(tileEntity, slotID++, 44, 17 + i * 18));
+            System.out.println(slotID);
         }
  
         //Inventory
