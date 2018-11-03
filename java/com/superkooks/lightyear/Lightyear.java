@@ -14,6 +14,7 @@ import com.superkooks.lightyear.items.ItemSparksilverDust;
 import com.superkooks.lightyear.items.ItemSparksilverIngot;
 import com.superkooks.lightyear.items.ItemStratomiteIngot;
 import com.superkooks.lightyear.items.ItemTalariaSyringe;
+import com.superkooks.lightyear.tiles.TileEntityCentrifuge;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -136,6 +137,9 @@ public class Lightyear {
 		// Machines
 		GameRegistry.registerBlock(blockCentrifuge,
 				blockCentrifuge.getUnlocalizedName().substring(5));
+		
+		// Tile Entities
+		GameRegistry.registerTileEntity(TileEntityCentrifuge.class, "ly:tileEntityCentrifuge");
 		
 		//
 		// Recipes
