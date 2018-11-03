@@ -19,8 +19,7 @@ public class BlockCentrifuge extends BlockContainer {
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			System.out.print("Dank new GUI opening!!!!!!!!!!\n");
-			entityPlayer.openGui(Lightyear.instance, -1, world, x, y, z);
+			entityPlayer.openGui(Lightyear.instance, 0, world, x, y, z);
 		}
 		
 		return true;
