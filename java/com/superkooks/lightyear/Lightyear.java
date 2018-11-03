@@ -145,7 +145,7 @@ public class Lightyear {
 		GameRegistry.addShapelessRecipe(new ItemStack(itemPalladium, 9), new Object[] {
 				Lightyear.blockPalladium
 		});
-
+		GameRegistry.addShapedRecipe(new ItemStack(blockPalladium), "XXX", "XXX", "XXX", 'X', itemPalladium);
 	}
 	
 	@EventHandler
