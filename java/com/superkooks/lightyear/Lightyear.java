@@ -41,7 +41,7 @@ public class Lightyear {
 	public static Item itemLeviathanSyringe;
 	public static Item itemTalariaSyringe;
 	
-	public static Item itemPalladium;
+	public static Item itemPalladiumShard;
 	public static Item itemNovite;
 	public static Item itemReinforcedLeather;
 	public static Item itemSparksilverDust;
@@ -72,7 +72,7 @@ public class Lightyear {
 				.setTextureName("ly:itemTalariaSyringe").setCreativeTab(tabLightyear);
 		
 		
-		itemPalladium = new ItemPalladiumShard().setUnlocalizedName("PalladiumShard")
+		itemPalladiumShard = new ItemPalladiumShard().setUnlocalizedName("PalladiumShard")
 				.setTextureName("ly:itemPalladiumShard").setCreativeTab(tabLightyear);
 		itemNovite = new ItemNovite().setUnlocalizedName("Novite")
 				.setTextureName("ly:itemNovite").setCreativeTab(tabLightyear);
@@ -112,8 +112,8 @@ public class Lightyear {
 		GameRegistry.registerItem(itemTalariaSyringe,
 				itemTalariaSyringe.getUnlocalizedName().substring(5));
 		
-		GameRegistry.registerItem(itemPalladium,
-				itemPalladium.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemPalladiumShard,
+				itemPalladiumShard.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemNovite,
 				itemNovite.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemReinforcedLeather,
@@ -146,10 +146,10 @@ public class Lightyear {
 		GameRegistry.addShapelessRecipe(new ItemStack(itemEmptySyringe), new Object[] {
 				Items.iron_ingot, Items.glass_bottle
 		});
-		GameRegistry.addShapelessRecipe(new ItemStack(itemPalladium, 9), new Object[] {
+		GameRegistry.addShapelessRecipe(new ItemStack(itemPalladiumShard, 9), new Object[] {
 				Lightyear.blockPalladium
 		});
-		GameRegistry.addShapedRecipe(new ItemStack(blockPalladium), "XXX", "XXX", "XXX", 'X', itemPalladium);
+		GameRegistry.addShapedRecipe(new ItemStack(blockPalladium), "XXX", "XXX", "XXX", 'X', itemPalladiumShard);
 	}
 	
 	@EventHandler

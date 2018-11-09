@@ -12,19 +12,15 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerCentrifuge extends Container {
 	private TileEntityCentrifuge tileEntity;
-
-	private int slotID = 0;
 	
 	private int lastProgress = 0;	
 	
 	public ContainerCentrifuge(EntityPlayer player, TileEntityCentrifuge tileEntity) {
 		this.tileEntity = tileEntity;
-		//Storage
-        for (int i = 0; i < 2; i++)
-        {
-            addSlotToContainer(new Slot(tileEntity, slotID++, 44 + i, 17));
-            System.out.println(slotID);
-        }
+		
+		addSlotToContainer(new Slot(tileEntity, 0, 44, 17));
+		addSlotToContainer(new Slot(tileEntity, 1, 44, 53));
+		addSlotToContainer(new SlotOutput(player, tileEntity, 2, 116, 35));
  
         //Inventory
         for (int i = 0; i < 3; i++)
@@ -53,6 +49,8 @@ public class ContainerCentrifuge extends Container {
             {
                 icrafting.sendProgressBarUpdate(this, 0, this.tileEntity.progress);
             }
+            
+        	this.lastProgress = this.tileEntity.progress;
         }
     }
         

@@ -18,7 +18,7 @@ public class BlockPalladiumOre extends Block {
 	
 	@Override
 	public Item getItemDropped(int metadata, Random rand, int fortune) {
-		return Lightyear.itemPalladium;
+		return Lightyear.itemPalladiumShard;
 	}
 	
 	@Override

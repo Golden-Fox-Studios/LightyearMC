@@ -20,7 +20,7 @@ public class CentrifugeRecipes {
     
     private void addSparkSilverDust() {
     	ItemStack[] input = new ItemStack[2];
-    	input[0] = new ItemStack(Lightyear.itemPalladium);
+    	input[0] = new ItemStack(Lightyear.itemPalladiumShard);
     	input[1] = new ItemStack(Items.redstone);
     	centrifugeList.put(input, new ItemStack(Lightyear.itemSparksilverDust));
     }

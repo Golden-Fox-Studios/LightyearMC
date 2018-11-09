@@ -12,8 +12,6 @@ import net.minecraftforge.common.util.Constants;
 
 public class TileEntityCentrifuge extends TileEntity implements IInventory {
 	
-	public boolean running;
-	
 	private ItemStack[] items = new ItemStack[3];
 	public int progress;
 	
@@ -23,16 +21,16 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
 
         if (!this.worldObj.isRemote)
         {
-            if (this.items[0] != null)
+            if (this.items[0] != null && this.items[1] != null)
             {
-                if (this.running && this.canRun())
+                if (this.canRun() || this.progress >= 199)
                 {
                     ++this.progress;
 
-                    if (this.progress == 200)
+                    if (this.progress >= 200)
                     {
                         this.progress = 0;
-                        this.smeltItem();
+                        this.processItem();
                         flag1 = true;
                     }
                 }
@@ -49,7 +47,7 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
         }
     }
 	
-	public void smeltItem()
+	public void processItem()
     {
         if (this.canRun())
         {
@@ -69,10 +67,13 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
             --this.items[0].stackSize;
             --this.items[1].stackSize;
 
-            if (this.items[0].stackSize <= 0 && this.items[1].stackSize <= 0)
+            if (this.items[0].stackSize <= 0)
             {
                 this.items[0] = null;
-                this.items[1] = null;
+            }
+            
+            if (this.items[1].stackSize <= 0) {
+            	this.items[1] = null;
             }
         }
     }
@@ -217,6 +218,6 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
     public void closeInventory() {}
 
 	public int getProgressScaled(int i) {
-		return progress * i;
+		return progress * i / 200;
 	}
 }
