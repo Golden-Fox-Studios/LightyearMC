@@ -2,7 +2,7 @@ package com.superkooks.lightyear.client.gui;
 
 import org.lwjgl.opengl.GL11;
 
-import com.superkooks.lightyear.client.gui.containers.ContainerGuiTest;
+import com.superkooks.lightyear.client.gui.containers.ContainerCentrifuge;
 import com.superkooks.lightyear.tiles.TileEntityCentrifuge;
 
 import net.minecraft.client.Minecraft;
@@ -12,14 +12,14 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiTest extends GuiContainer {
-	private ResourceLocation texture = new ResourceLocation("ly", "textures/gui/testGui.png");
+public class GuiCentrifuge extends GuiContainer {
+	private ResourceLocation texture = new ResourceLocation("ly", "textures/gui/guiCentrifuge.png");
 	
 	private InventoryPlayer inventory;
 	private TileEntityCentrifuge te;
 	
-	public GuiTest(TileEntityCentrifuge te, EntityPlayer player) {
-		super(new ContainerGuiTest(player, te));
+	public GuiCentrifuge(TileEntityCentrifuge te, EntityPlayer player) {
+		super(new ContainerCentrifuge(player, te));
 		inventory = player.inventory;
 		this.te = te;
 	}
@@ -35,6 +35,11 @@ public class GuiTest extends GuiContainer {
         int y = (height - ySize) / 2;
  
         drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
+        
+        if (this.te.running) {
+        	int i1 = this.te.getProgressScaled(24);
+            this.drawTexturedModalRect(x + 79, y + 34, 176, 14, i1 + 1, 16);
+        }
     }
  
     @Override

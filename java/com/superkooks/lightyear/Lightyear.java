@@ -8,7 +8,7 @@ import com.superkooks.lightyear.client.gui.GuiHandler;
 import com.superkooks.lightyear.items.ItemEmptySyringe;
 import com.superkooks.lightyear.items.ItemLeviathanSyringe;
 import com.superkooks.lightyear.items.ItemNovite;
-import com.superkooks.lightyear.items.ItemPalladium;
+import com.superkooks.lightyear.items.ItemPalladiumShard;
 import com.superkooks.lightyear.items.ItemReinforcedLeather;
 import com.superkooks.lightyear.items.ItemSparksilverDust;
 import com.superkooks.lightyear.items.ItemSparksilverIngot;
@@ -72,8 +72,8 @@ public class Lightyear {
 				.setTextureName("ly:itemTalariaSyringe").setCreativeTab(tabLightyear);
 		
 		
-		itemPalladium = new ItemPalladium().setUnlocalizedName("Palladium")
-				.setTextureName("ly:itemPalladium").setCreativeTab(tabLightyear);
+		itemPalladium = new ItemPalladiumShard().setUnlocalizedName("PalladiumShard")
+				.setTextureName("ly:itemPalladiumShard").setCreativeTab(tabLightyear);
 		itemNovite = new ItemNovite().setUnlocalizedName("Novite")
 				.setTextureName("ly:itemNovite").setCreativeTab(tabLightyear);
 		itemReinforcedLeather = new ItemReinforcedLeather().setUnlocalizedName("ReinforcedLeather")

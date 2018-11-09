@@ -1,6 +1,6 @@
 package com.superkooks.lightyear.client.gui;
 
-import com.superkooks.lightyear.client.gui.containers.ContainerGuiTest;
+import com.superkooks.lightyear.client.gui.containers.ContainerCentrifuge;
 import com.superkooks.lightyear.tiles.TileEntityCentrifuge;
 
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -16,7 +16,7 @@ public class GuiHandler implements IGuiHandler {
 		switch (ID) {
 			case GuiIds.centrifugeId:
 				if (tile instanceof TileEntityCentrifuge) {
-					return new ContainerGuiTest(player, (TileEntityCentrifuge) tile);
+					return new ContainerCentrifuge(player, (TileEntityCentrifuge) tile);
 				}
 		}
 		
@@ -30,7 +30,7 @@ public class GuiHandler implements IGuiHandler {
 		switch (ID) {
 			case GuiIds.centrifugeId:
 				if (tile instanceof TileEntityCentrifuge) {
-					return new GuiTest((TileEntityCentrifuge) tile, player);
+					return new GuiCentrifuge((TileEntityCentrifuge) tile, player);
 				}
 		}
 		

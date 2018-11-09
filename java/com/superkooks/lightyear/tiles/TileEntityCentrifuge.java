@@ -1,5 +1,7 @@
 package com.superkooks.lightyear.tiles;
 
+import com.superkooks.lightyear.items.crafting.CentrifugeRecipes;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -10,7 +12,85 @@ import net.minecraftforge.common.util.Constants;
 
 public class TileEntityCentrifuge extends TileEntity implements IInventory {
 	
-	private ItemStack[] items = new ItemStack[2];
+	public boolean running;
+	
+	private ItemStack[] items = new ItemStack[3];
+	public int progress;
+	
+	public void updateEntity()
+    {
+        boolean flag1 = false;
+
+        if (!this.worldObj.isRemote)
+        {
+            if (this.items[0] != null)
+            {
+                if (this.running && this.canRun())
+                {
+                    ++this.progress;
+
+                    if (this.progress == 200)
+                    {
+                        this.progress = 0;
+                        this.smeltItem();
+                        flag1 = true;
+                    }
+                }
+                else
+                {
+                    this.progress = 0;
+                }
+            }
+        }
+
+        if (flag1)
+        {
+            this.markDirty();
+        }
+    }
+	
+	public void smeltItem()
+    {
+        if (this.canRun())
+        {
+        	ItemStack[] input = new ItemStack[2];
+        	input[0] = items[0]; input[1] = items[1];
+            ItemStack itemstack = CentrifugeRecipes.centrifugeBase.getCentrifugingResult(input);
+
+            if (this.items[2] == null)
+            {
+                this.items[2] = itemstack.copy();
+            }
+            else if (this.items[2].getItem() == itemstack.getItem())
+            {
+                this.items[2].stackSize += itemstack.stackSize;
+            }
+
+            --this.items[0].stackSize;
+            --this.items[1].stackSize;
+
+            if (this.items[0].stackSize <= 0 && this.items[1].stackSize <= 0)
+            {
+                this.items[0] = null;
+                this.items[1] = null;
+            }
+        }
+    }
+	
+	public boolean canRun() {
+		if (this.items[0] == null || this.items[1] == null) {
+			return false;
+		} else {
+			ItemStack[] input = new ItemStack[2];
+			input[0] = this.items[0]; input[1] = this.items[1];
+			ItemStack itemstack = CentrifugeRecipes.centrifugeBase.getCentrifugingResult(input);
+            if (itemstack == null) return false;
+            if (this.items[2] == null) return true;
+            if (!this.items[2].isItemEqual(itemstack)) return false;
+            int result = items[2].stackSize + itemstack.stackSize;
+            return result <= getInventoryStackLimit() && result <= this.items[2].getMaxStackSize();
+		}
+	}
 	
 	public int getSizeInventory() {
 		return items.length;
@@ -114,7 +194,7 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
  
     public String getInventoryName()
     {
-        return "container.storage";
+        return "container.centrifuge";
     }
  
     public boolean hasCustomInventoryName()
@@ -135,4 +215,8 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
     public void openInventory() {}
     
     public void closeInventory() {}
+
+	public int getProgressScaled(int i) {
+		return progress * i;
+	}
 }
