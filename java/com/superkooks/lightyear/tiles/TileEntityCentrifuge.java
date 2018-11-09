@@ -34,10 +34,8 @@ public class TileEntityCentrifuge extends TileEntity implements IInventory {
                         flag1 = true;
                     }
                 }
-                else
-                {
+            } else {
                     this.progress = 0;
-                }
             }
         }
 

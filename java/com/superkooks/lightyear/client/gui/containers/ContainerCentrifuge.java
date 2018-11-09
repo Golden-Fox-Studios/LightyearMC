@@ -13,8 +13,6 @@ import net.minecraft.item.ItemStack;
 public class ContainerCentrifuge extends Container {
 	private TileEntityCentrifuge tileEntity;
 	
-	private int lastProgress = 0;	
-	
 	public ContainerCentrifuge(EntityPlayer player, TileEntityCentrifuge tileEntity) {
 		this.tileEntity = tileEntity;
 		
@@ -44,13 +42,7 @@ public class ContainerCentrifuge extends Container {
         for (int i = 0; i < this.crafters.size(); ++i)
         {
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
-
-            if (this.lastProgress != this.tileEntity.progress)
-            {
-                icrafting.sendProgressBarUpdate(this, 0, this.tileEntity.progress);
-            }
-            
-        	this.lastProgress = this.tileEntity.progress;
+            icrafting.sendProgressBarUpdate(this, 0, this.tileEntity.progress);
         }
     }
         
