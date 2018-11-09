@@ -38,6 +38,12 @@ public class GuiCentrifuge extends GuiContainer {
         
         int i1 = this.te.getProgressScaled(47);
         this.drawTexturedModalRect(x + 64, y + 40, 176, 36, i1 + 1, 5);
+        
+    	if (this.te.progress % 4 < 2) {
+    		this.drawTexturedModalRect(x + 46, y + 36, 178, 20, 14, 14);
+    	} else if (this.te.progress % 4 >= 2) {
+    		this.drawTexturedModalRect(x + 46, y + 35, 178, 1, 13, 15);
+        }
     }
  
     @Override
