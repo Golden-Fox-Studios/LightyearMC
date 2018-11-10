@@ -32,9 +32,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-@Mod(modid = "ly", name = "Lightyear", version = "0.1")
+@Mod(modid = "Lightyear", name = "Lightyear", version = "0.1")
 public class Lightyear {
-	@Instance("ly")
+	@Instance("Lightyear")
 	public static Lightyear instance;
 	
 	// Items

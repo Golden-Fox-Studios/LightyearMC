@@ -1,14 +1,11 @@
 package com.superkooks.lightyear.client.gui.containers;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.MathHelper;
 
 public class SlotOutput extends Slot
@@ -99,17 +96,5 @@ public class SlotOutput extends Slot
         }
 
         this.field_75228_b = 0;
-
-        FMLCommonHandler.instance().firePlayerSmeltedEvent(thePlayer, p_75208_1_);
-
-        if (p_75208_1_.getItem() == Items.iron_ingot)
-        {
-            this.thePlayer.addStat(AchievementList.acquireIron, 1);
-        }
-
-        if (p_75208_1_.getItem() == Items.cooked_fished)
-        {
-            this.thePlayer.addStat(AchievementList.cookFish, 1);
-        }
     }
 }
