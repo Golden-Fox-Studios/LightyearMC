@@ -14,6 +14,7 @@ import com.superkooks.lightyear.items.ItemSparksilverDust;
 import com.superkooks.lightyear.items.ItemSparksilverIngot;
 import com.superkooks.lightyear.items.ItemStratomiteIngot;
 import com.superkooks.lightyear.items.ItemTalariaSyringe;
+import com.superkooks.lightyear.items.WeaponShockBaton;
 import com.superkooks.lightyear.tiles.TileEntityCentrifuge;
 
 import cpw.mods.fml.common.Mod;
@@ -47,6 +48,9 @@ public class Lightyear {
 	public static Item itemSparksilverDust;
 	public static Item itemSparksilverIngot;
 	public static Item itemStratomiteIngot;
+	
+	// Weapons
+	public static Item weaponShockBaton;
 	
 	// Blocks
 	public static Block blockPalladiumOre;
@@ -84,6 +88,10 @@ public class Lightyear {
 				.setTextureName("ly:itemSparksilverIngot").setCreativeTab(tabLightyear);
 		itemStratomiteIngot = new ItemStratomiteIngot().setUnlocalizedName("StratomiteIngot")
 				.setTextureName("ly:itemStratomiteIngot").setCreativeTab(tabLightyear);
+		
+		// Weapons
+		weaponShockBaton = new WeaponShockBaton().setUnlocalizedName("ShockBaton")
+				.setTextureName("ly:weaponShockBaton").setCreativeTab(tabLightyear);
 		
 		//
 		// Blocks
@@ -124,6 +132,10 @@ public class Lightyear {
 				itemSparksilverIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemStratomiteIngot,
 				itemStratomiteIngot.getUnlocalizedName().substring(5));
+		
+		// Weapons
+		GameRegistry.registerItem(weaponShockBaton,
+				weaponShockBaton.getUnlocalizedName().substring(5));
 		
 	
 		// Blocks
