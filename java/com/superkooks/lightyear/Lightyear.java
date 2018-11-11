@@ -1,6 +1,7 @@
 package com.superkooks.lightyear;
 
 import com.superkooks.lightyear.blocks.BlockCentrifuge;
+import com.superkooks.lightyear.blocks.BlockLycaGrass;
 import com.superkooks.lightyear.blocks.BlockPalladium;
 import com.superkooks.lightyear.blocks.BlockPalladiumOre;
 import com.superkooks.lightyear.blocks.BlockStratomiteOre;
@@ -56,6 +57,7 @@ public class Lightyear {
 	public static Block blockPalladiumOre;
 	public static Block blockPalladium;
 	public static Block blockStratomiteOre;
+	public static Block blockLycaGrass;
 	
 	// Machines
 	public static Block blockCentrifuge;
@@ -101,6 +103,8 @@ public class Lightyear {
 				.setBlockTextureName("ly:blockPalladium").setCreativeTab(tabLightyear);
 		blockStratomiteOre = new BlockStratomiteOre(Material.rock).setBlockName("StratomiteOre")
 				.setBlockTextureName("ly:blockStratomiteOre").setCreativeTab(tabLightyear);
+		blockLycaGrass = new BlockLycaGrass(Material.grass).setBlockName("LycaGrass")
+				.setBlockTextureName("ly:blockLycaGrass").setCreativeTab(tabLightyear);
 		
 		//
 		// Machines
@@ -145,6 +149,8 @@ public class Lightyear {
 				blockPalladium.getUnlocalizedName().substring(5));
 		GameRegistry.registerBlock(blockStratomiteOre,
 				blockStratomiteOre.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(blockLycaGrass,
+				blockLycaGrass.getUnlocalizedName().substring(5));
 		
 		// Machines
 		GameRegistry.registerBlock(blockCentrifuge,
